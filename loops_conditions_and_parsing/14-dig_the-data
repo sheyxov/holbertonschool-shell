@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 #kod
-awk '{c[$1,$9]++} END{for(k in c){split(k,a,SUBSEP); print c[k],a[1],a[2]}}' apache-access.log | sort -nr
-
+awk '{print $1, $9}' apache-access.log | sort | uniq -c | sort -nr
