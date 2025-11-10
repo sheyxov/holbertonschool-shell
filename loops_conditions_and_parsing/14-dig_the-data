@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 #kod
-awk '{key = $1 " " $9; count[key]++} END {for (key in count) printf "%5d %s\n", count[key], key}' apache-access.log | sort -nr
+awk '{c[$1,$9]++} END{for(k in c){split(k,a,SUBSEP); print c[k],a[1],a[2]}}' apache-access.log | sort -nr
+
