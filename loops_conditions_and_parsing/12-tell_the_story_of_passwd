@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#KOD
+IFS=':'
+while read -r username password uid gid tamad home_path shell; do
+    echo "The user $username is part of the $gid gang, lives in $home_path and rides $shell. $uid's place is protected by the passcode $password, more info about the user here: $tamad"
+
+done < /etc/passwd
