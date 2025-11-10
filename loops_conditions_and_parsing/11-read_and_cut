@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Set IFS to colon to split fields in /etc/passwd
 IFS=':'
-while read -r username password uid gid gecos home_path shell; do
+while read -r username _ uid _ _ home_path _; do
     echo "$username:$uid:$home_path"
 done < /etc/passwd
