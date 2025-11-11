@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #Process and PID file
-PID="/var/run/myscript.pid"
+PID="/tmp/myscript.pid"
 echo "$$" > "$PID"
 trap 'echo "I hate the kill command"' SIGTERM
 trap 'echo "Y U no love me?!"' SIGINT
